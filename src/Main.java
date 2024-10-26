@@ -2,33 +2,31 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
         //Задача 1.
-        int clientIOs= 0;
-        if (clientIOs==0) {
-            System.out.println("Установи версию приложения для Ios");
+        int clientOs = 0;
+        if (clientOs == 0) {
+            System.out.println("Установи версию приложения для Ios по ссылке");
         } else {
-            System.out.println("Установи версию приложения для Андроид");
+            System.out.println("Установи версию приложения для Андроид по ссылке");
 
         }
 
 
-
-        int clientOs = 1;
         int clientDeviceYear = 2015;
-        if (clientOs == 1 && clientDeviceYear <= 2015) {
-            System.out.println("Установи облегченную версию для Андроид по ссылке");
-            if (clientOs == 1 && clientDeviceYear > 2015) {
-                System.out.println("Установи обычную версию для Андроид");
-            }
-        } else if (clientOs < 1 && clientDeviceYear <= 2015) {
-            System.out.println("Установи облегченную версию приложеия для IOS");
-            if (clientOs < 1 && clientDeviceYear > 2015) {
-                System.out.println("Установи обычную версию для IoS");
-            }
+        if (clientOs == 0 && clientDeviceYear < 2015) {
+            System.out.println("Установи облегченную версию для Ios по ссылке");
+        } else if (clientOs == 0 && clientDeviceYear >= 2015) {
+            System.out.println("Установи обычную версию для Ios");
+        } else if (clientOs > 0 && clientDeviceYear < 2015) {
+            System.out.println("Установи облегченную версию приложеия для Андроид по ссылке");
+        } else {
+            System.out.println("Установи обычную версию приложеия для Андроид по ссылке");
+
         }
+
 
         //Задача3.
         int year = 2021;
-        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+        if (year > 1584 && ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)) {
             System.out.println(year + " год является высокосным");
         } else {
             System.out.println(year + "год не является высокосным");
@@ -37,24 +35,17 @@ public class Main {
 
         //Задача 4.
         int deliveryDistance = 95;
-        int deliveryDays = 1;
-        boolean oneDay = deliveryDistance < 20;
-        boolean twoDay = deliveryDistance >= 20 && deliveryDistance < 60;
-        boolean threeDay = deliveryDistance < 100 && deliveryDistance >= 60;
+        if (deliveryDistance <= 20) {
+            System.out.println("Потребуется дней: " + 1);
+        } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
+            System.out.println("Потребуется дней: " + 2);
 
-        if (oneDay) {deliveryDays = 1;}
-        else if (twoDay) {deliveryDays = 2;}
-        else if (threeDay) {deliveryDays = 3;}
+        } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
+            System.out.println("Потребуется дней: " + 3);
 
-        if (oneDay) {
-            System.out.println("Потребуется дней: " + deliveryDays);}
-        else if (twoDay) {
-            System.out.println("Потребуется дней: " + deliveryDays);}
-        else if (threeDay) {
-            System.out.println("Потребуется дней: " + deliveryDays);}
-        else {
-            System.out.println("Доставки нет");}
-
+        } else {
+            System.out.println("Доставки нет");
+        }
 
 
         //Задача5.
@@ -82,12 +73,11 @@ public class Main {
                 season = "Осень";
                 break;
             default:
-                season = "несуществующий месяц";}
-
-                System.out.println("Декабрь - это " + season);
-
-
-
-
+                season = "несуществующий месяц";
         }
+
+        System.out.println("Декабрь - это " + season);
+
     }
+
+}
